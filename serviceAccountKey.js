@@ -1,0 +1,15 @@
+export default service = {
+    "type": "service_account",
+    "project_id": "learning-firebase-8f09a",
+    "private_key_id": "67f4974c06b65e88bc759dc55f68f16f2095cdcf",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCX1cZgj0p386al\neZBdJKbZWFTScB0mx6R/617BIbasBfAtv28E3CjnQOtB4fiNSZtJnqQI7wNg3C/C\nlRcSOBuVTTi7nkDzHreNsBfslguNM3Fc9ad9+dorN8PzLJ7ZSZTG/t4FWhsQb2It\n41cDAvK+2v0sRtLzG8gQsNny07oZcGzJ8mHsmG98DTydo9hojNb4v/kTMyaqkCYe\nnnJ1aHG9o8eOzNVKuLAY7mAkhEPNczjUiFWc6cAftdV4zoszCNDD8O9CKN5RlxDI\nebBbMUJcT/1ZLiTI5djGip3oEqYQrGAWQh0NukgcMGnEH3RW8ZU+a1WtEjJIc2sS\n9edI5IxBAgMBAAECggEADLMPLB1gC6df7WA9EGVT5ULrmUxSS9+P5TkhDENPHZVD\nkPf9h6kIbMszwidt3BdneyFfM/YV0MCp5/sDWn1B5Vt3ns2uPgd4L8wmPB4SqkU+\nupk7YKCIvGumIo09Xgw2+uvvUwBF2jqOuirVKMXS2t7DJTRpSXct5SN9nz9RRfZN\nzPN/mR3mY08Dhy5U2OLn6jEFuVfcwGYB5ovLI59A2fBpHsOgcppj0pCh84omlaGw\nvM3Owpw/0fOgR+n5+tEJ8TxPQOdlgDRTvVc2JnwmCW/bvMUo0wVrVOjOyhyUPCy6\nYm0xjSTBUN3uFXrKloN0OfOdDFq6UqKQ3TcTH57OyQKBgQDKoYbpS8pTr/Apipet\nm7HypYu5OKoVZMPkpC0MAa4BjVuXXD6sr3Dj4tEQClnD3wW/rUj23tV2oYryqDyO\nRWu6W3rbMiKyIFdpbLK3WHthakNpjvdTCkW2NeQWbGXQRNf6EcrevruVb2IAGRnz\n98SrKZjJxhepLus/uO0wwDPKzQKBgQC/01BVsHNXiyGurZ282i1C2K7S/w2C7zj9\nGm/Tt3O1XpNIf3x4yLrIaEB0r4QXv4aDDfS8hmjMb/jzOpKxiV2hSeH2Na7F9K74\nzMa9VsLWbvXBRa1YkQJVgI4SN37dF+LxjrOhfTFZR9jmWD8++VatuQNB21w0pQOm\noh9NHgBvRQKBgQC3pmpmK8D21HDw1aHfQUuoxg27E/ZjaW56XapORX91/K5UotBT\nJrdEc6BTz23ILuxA60dEKHaEDKmogH5R2+1le9//ppL3qoRPEqtvrQw2IF903pSe\neKLyICnXgOtONfchuNqLw4a0S70gpZ92FMv07cCCr71mIxYoLO0c0DagyQKBgQCt\nYG8BpAP8IhKFcQJayM+T1YjdyA0MRO+7RAPC1dLNIPf51NBJ0xOPQzrOvDylwkPv\ne9Ox+cIK1UGrhUtFD6UCvGZxRD/9R5RF57/RLfPYIF4bG8D7hcUYRqMiL+qIJqjG\nL3aIBUFvMpMGTsiLQI1pYwlgosWKB4NvPqUP7If0CQKBgHbX0a4Lw7PZJD5yPrMI\nnHMkW2/sK54sKMiw1Fhe0Zi78vewCOM5Q3MT1VbAXWJ8YbF8OeiMt3sqSpyd1QcN\nyTsCVrkN8ufLsUjKfR2bzueSs/3ldx9hzLS6jTXxdCYERSFlt4RwmqhUHHzN0lLt\nXBAq/ImIaik9yI0sCzxlp3O5\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-eumo3@learning-firebase-8f09a.iam.gserviceaccount.com",
+    "client_id": "113541326388263093567",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-eumo3%40learning-firebase-8f09a.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+}
+
+[{ "Name": "Ms. Toni Schaefer III", "Credit_Card_Number": "5434033666408667", "Issuer": "mastercard", "Expiry_Date": "06/29", "cvv": "837" }, { "Name": "Frankie Kovacek", "Credit_Card_Number": "5129066148456987", "Issuer": "mastercard", "Expiry_Date": "02/29", "cvv": "672" }, { "Name": "Willis Bruen I", "Credit_Card_Number": "5538858010688605", "Issuer": "mastercard", "Expiry_Date": "12/25", "cvv": "542" }, { "Name": "Dr. Angela Smitham", "Credit_Card_Number": "5119272935141665", "Issuer": "mastercard", "Expiry_Date": "08/25", "cvv": "093" }, { "Name": "Mack O'Kon V", "Credit_Card_Number": "5429457663154718", "Issuer": "mastercard", "Expiry_Date": "01/28", "cvv": "919" }]
