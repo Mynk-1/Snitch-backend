@@ -13,7 +13,11 @@ const app = express();
 
 // Enable CORS for requests from React frontend
 app.use(cors({
-    origin: 'https://snitch-clone-beta.vercel.app/'
+    origin: 'https://snitch-clone-beta.vercel.app', // Allows a specific origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',     // Allowed HTTP methods
+    
+    credentials: true,                             // Allow credentials like cookies to be sent
+    
 }));
 
 // Middleware
