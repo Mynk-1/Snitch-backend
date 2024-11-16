@@ -33,7 +33,11 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/your_data
 
 // Use routes
 app.use('/api/otp', otpRoutes);          // Route for OTP functionality
-app.use('/api/payment', paymentRoutes);   // Route for payment functionality
+app.use('/api/payment', paymentRoutes); 
+
+app.get("/",(req,res)=>{
+    res.json({success:"server running successfully"})
+})// Route for payment functionality
 
 // Start the server
 const PORT = process.env.PORT || 5000;
