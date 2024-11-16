@@ -1,29 +1,28 @@
-// app.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const paymentRoutes = require('./routes/paymentRoutes.js'); // Correct path to payment routes
-const otpRoutes = require('./routes/otpRoutes'); // Correct path to OTP routes
+const paymentRoutes = require('./routes/paymentRoutes.js'); 
+const otpRoutes = require('./routes/otpRoutes'); 
 
-require('dotenv').config(); // Load environment variables from .env in the root directory
-
+require('dotenv').config(); 
 const app = express();
 
-// Enable CORS for requests from React frontend
+
 app.use(cors({
-    origin: 'https://snitch-clone-beta.vercel.app', // Allows a specific origin
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',     // Allowed HTTP methods
+    origin: 'https://snitch-clone-beta.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',    
     
-    credentials: true,                             // Allow credentials like cookies to be sent
+    credentials: true,                            
     
 }));
 
-// Middleware
+
 app.use(bodyParser.json());
 
-// MongoDB connection
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/your_database_name', { // Replace 'your_database_name' with your actual database name
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -35,15 +34,15 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/your_data
     console.error('Error connecting to MongoDB:', err.message);
 });
 
-// Use routes
-app.use('/api/otp', otpRoutes);          // Route for OTP functionality
+
+app.use('/api/otp', otpRoutes);         
 app.use('/api/payment', paymentRoutes); 
 
 app.get("/",(req,res)=>{
     res.json({success:"server running successfully"})
-})// Route for payment functionality
+})
 
-// Start the server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

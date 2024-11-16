@@ -1,4 +1,4 @@
-// controllers/paymentController.js
+
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 require('dotenv').config();
@@ -8,14 +8,14 @@ const razorpayInstance = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
-// Create a new order
+
 exports.createOrder = async (req, res) => {
   const { amount, currency = "INR" } = req.body;
 
   const options = {
-    amount: amount * 100, // Razorpay requires amount in paise
+    amount: amount * 100, 
     currency: currency
-    // receipt: `receipt_order_${Math.floor(Math.random() * 1000)}`
+    
   };
 
   try {
@@ -32,7 +32,7 @@ exports.createOrder = async (req, res) => {
   }
 };
 
-// Verify payment signature
+
 exports.verifyPayment = (req, res) => {
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 

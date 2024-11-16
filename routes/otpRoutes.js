@@ -1,14 +1,14 @@
-// /routes/otpRoutes.js
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const otpGenerator = require('otp-generator');
-const Otp = require('../models/Otp');  // Otp model for OTP storage
-const User = require('../models/User');  // User model for User storage
+const Otp = require('../models/Otp');  
+const User = require('../models/User');  
 const router = express.Router();
 
-const JWT_SECRET = 'your_jwt_secret_key';  // Secret key for JWT token
+const JWT_SECRET = 'your_jwt_secret_key'; 
 
-// Generate OTP
+
 router.post('/generate-otp', async (req, res) => {
     const { phoneNumber } = req.body;
 
@@ -16,12 +16,12 @@ router.post('/generate-otp', async (req, res) => {
         return res.status(400).json({ message: 'Phone number is required' });
     }
 
-    // Generate a 6-digit OTP
+    
     const otp = otpGenerator.generate(6, { digits: true, alphabets: false, upperCase: false, specialChars: false });
 
-    // Save OTP to the database
+    
     try {
-        // Check if the phone number already has an OTP, if so, update it
+        
         const existingOtp = await Otp.findOne({ phoneNumber });
         if (existingOtp) {
             existingOtp.otp = otp;
@@ -31,7 +31,7 @@ router.post('/generate-otp', async (req, res) => {
             await newOtp.save();
         }
 
-        // For demonstration, logging OTP, in production you would send via SMS
+       
         console.log(`Generated OTP for ${phoneNumber}: ${otp}`);
 
         return res.status(200).json({ message: 'OTP generated successfully' });
@@ -40,7 +40,7 @@ router.post('/generate-otp', async (req, res) => {
     }
 });
 
-// Verify OTP and create User with JWT
+
 router.post('/verify-otp', async (req, res) => {
     const { phoneNumber, otp } = req.body;
 
@@ -49,14 +49,14 @@ router.post('/verify-otp', async (req, res) => {
     }
 
     try {
-        // Find the OTP for the given phone number
+        
         const storedOtp = await Otp.findOne({ phoneNumber });
 
         if (!storedOtp || storedOtp.otp !== otp) {
             return res.status(400).json({ message: 'Invalid OTP or phone number' });
         }
 
-        // OTP verified, check if user exists, if not create a new user
+        
         let user = await User.findOne({ phoneNumber });
 
         if (!user) {
@@ -64,10 +64,10 @@ router.post('/verify-otp', async (req, res) => {
             await user.save();
         }
 
-        // Generate a JWT token with the user's _id
-        const token = jwt.sign({ userId: user._id }, JWT_SECRET);  // No expiration and no phone number in JWT
+        
+        const token = jwt.sign({ userId: user._id }, JWT_SECRET);  
 
-        // Remove OTP after verification
+        
         await Otp.deleteOne({ phoneNumber });
 
         return res.status(200).json({ message: 'OTP verified successfully', token });
